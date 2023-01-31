@@ -164,6 +164,11 @@ namespace MvM_Upgrade_Vscript_Converter
             0,
             0,
             0});
+	    this.InputAng.Minimum = new decimal(new int[] {
+            359,
+            0,
+            0,
+            -2147483648});
 	    this.InputAng.Name = "InputAng";
 	    this.InputAng.Size = new System.Drawing.Size(129, 23);
 	    this.InputAng.TabIndex = 4;

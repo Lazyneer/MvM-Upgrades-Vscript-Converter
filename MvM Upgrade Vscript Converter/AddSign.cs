@@ -10,6 +10,20 @@ namespace MvM_Upgrade_Vscript_Converter
 	    InitializeComponent();
 	}
 
+	public AddSign(int x, int y, int z, int ang, int height)
+	{
+	    InitializeComponent();
+
+	    InputPosX.Value = x;
+	    InputPosY.Value = y;
+	    InputPosZ.Value = z;
+	    InputAng.Value = ang;
+	    InputHeight.Value = height;
+
+	    BtnAdd.Text = "Edit";
+	    Text = Text.Replace("Add", "Edit");
+	}
+
 	public int PosX = 0;
 	public int PosY = 0;
 	public int PosZ = 0;

@@ -34,6 +34,9 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.MainTable = new System.Windows.Forms.TableLayoutPanel();
 	    this.GroupSettings = new System.Windows.Forms.GroupBox();
 	    this.InputTable = new System.Windows.Forms.TableLayoutPanel();
+	    this.InputCompress = new System.Windows.Forms.CheckBox();
+	    this.BtnEditStation = new System.Windows.Forms.Button();
+	    this.BtnEditSign = new System.Windows.Forms.Button();
 	    this.InputSave = new System.Windows.Forms.CheckBox();
 	    this.InputMirror = new System.Windows.Forms.CheckBox();
 	    this.BtnRemoveStation = new System.Windows.Forms.Button();
@@ -76,6 +79,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // 
 	    this.FileDialogMap.DefaultExt = "bsp";
 	    this.FileDialogMap.Filter = "Source engine map|*.bsp";
+	    this.FileDialogMap.Multiselect = true;
 	    // 
 	    // MainTable
 	    // 
@@ -105,24 +109,29 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // 
 	    // InputTable
 	    // 
-	    this.InputTable.ColumnCount = 6;
+	    this.InputTable.ColumnCount = 8;
 	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
 	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
 	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
 	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-	    this.InputTable.Controls.Add(this.InputSave, 2, 10);
+	    this.InputTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+	    this.InputTable.Controls.Add(this.InputCompress, 4, 11);
+	    this.InputTable.Controls.Add(this.BtnEditStation, 2, 9);
+	    this.InputTable.Controls.Add(this.BtnEditSign, 6, 9);
+	    this.InputTable.Controls.Add(this.InputSave, 4, 10);
 	    this.InputTable.Controls.Add(this.InputMirror, 0, 10);
-	    this.InputTable.Controls.Add(this.BtnRemoveStation, 2, 9);
-	    this.InputTable.Controls.Add(this.BtnRemoveSign, 5, 9);
-	    this.InputTable.Controls.Add(this.ListSigns, 3, 8);
-	    this.InputTable.Controls.Add(this.BtnAddSign, 4, 9);
-	    this.InputTable.Controls.Add(this.BtnAddStation, 1, 9);
-	    this.InputTable.Controls.Add(this.LabelSign, 3, 7);
+	    this.InputTable.Controls.Add(this.BtnRemoveStation, 3, 9);
+	    this.InputTable.Controls.Add(this.BtnRemoveSign, 7, 9);
+	    this.InputTable.Controls.Add(this.ListSigns, 4, 8);
+	    this.InputTable.Controls.Add(this.BtnAddSign, 5, 9);
+	    this.InputTable.Controls.Add(this.BtnAddStation, 0, 9);
+	    this.InputTable.Controls.Add(this.LabelSign, 4, 7);
 	    this.InputTable.Controls.Add(this.LabelStation, 0, 7);
-	    this.InputTable.Controls.Add(this.BtnUpgrades, 5, 6);
-	    this.InputTable.Controls.Add(this.BtnVscript, 5, 4);
+	    this.InputTable.Controls.Add(this.BtnUpgrades, 7, 6);
+	    this.InputTable.Controls.Add(this.BtnVscript, 7, 4);
 	    this.InputTable.Controls.Add(this.InputUpgradesPath, 1, 6);
 	    this.InputTable.Controls.Add(this.InputVscriptPath, 1, 4);
 	    this.InputTable.Controls.Add(this.LabelUpgrades, 0, 5);
@@ -133,9 +142,9 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.InputTable.Controls.Add(this.InputMap, 1, 1);
 	    this.InputTable.Controls.Add(this.InputGame, 1, 0);
 	    this.InputTable.Controls.Add(this.LabelSuffix, 0, 2);
-	    this.InputTable.Controls.Add(this.BtnConvert, 5, 10);
-	    this.InputTable.Controls.Add(this.BtnGame, 5, 0);
-	    this.InputTable.Controls.Add(this.BtnMap, 5, 1);
+	    this.InputTable.Controls.Add(this.BtnConvert, 7, 11);
+	    this.InputTable.Controls.Add(this.BtnGame, 7, 0);
+	    this.InputTable.Controls.Add(this.BtnMap, 7, 1);
 	    this.InputTable.Controls.Add(this.InputSuffix, 1, 2);
 	    this.InputTable.Controls.Add(this.InputVscriptPull, 1, 3);
 	    this.InputTable.Controls.Add(this.ListStations, 0, 8);
@@ -155,43 +164,82 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.InputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 	    this.InputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
 	    this.InputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-	    this.InputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+	    this.InputTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
 	    this.InputTable.Size = new System.Drawing.Size(588, 459);
 	    this.InputTable.TabIndex = 0;
+	    // 
+	    // InputCompress
+	    // 
+	    this.InputCompress.AutoSize = true;
+	    this.InputTable.SetColumnSpan(this.InputCompress, 3);
+	    this.InputCompress.Dock = System.Windows.Forms.DockStyle.Left;
+	    this.InputCompress.Location = new System.Drawing.Point(296, 431);
+	    this.InputCompress.Name = "InputCompress";
+	    this.InputCompress.Size = new System.Drawing.Size(145, 25);
+	    this.InputCompress.TabIndex = 21;
+	    this.InputCompress.Text = "Compress output map";
+	    this.InputCompress.UseVisualStyleBackColor = true;
+	    // 
+	    // BtnEditStation
+	    // 
+	    this.BtnEditStation.Dock = System.Windows.Forms.DockStyle.Fill;
+	    this.BtnEditStation.Enabled = false;
+	    this.BtnEditStation.Location = new System.Drawing.Point(126, 369);
+	    this.BtnEditStation.Name = "BtnEditStation";
+	    this.BtnEditStation.Size = new System.Drawing.Size(79, 25);
+	    this.BtnEditStation.TabIndex = 13;
+	    this.BtnEditStation.Text = "Edit";
+	    this.BtnEditStation.UseVisualStyleBackColor = true;
+	    this.BtnEditStation.Click += new System.EventHandler(this.BtnEditStation_Click);
+	    // 
+	    // BtnEditSign
+	    // 
+	    this.BtnEditSign.Dock = System.Windows.Forms.DockStyle.Fill;
+	    this.BtnEditSign.Enabled = false;
+	    this.BtnEditSign.Location = new System.Drawing.Point(421, 369);
+	    this.BtnEditSign.Name = "BtnEditSign";
+	    this.BtnEditSign.Size = new System.Drawing.Size(79, 25);
+	    this.BtnEditSign.TabIndex = 16;
+	    this.BtnEditSign.Text = "Edit";
+	    this.BtnEditSign.UseVisualStyleBackColor = true;
+	    this.BtnEditSign.Click += new System.EventHandler(this.BtnEditSign_Click);
 	    // 
 	    // InputSave
 	    // 
 	    this.InputSave.AutoSize = true;
 	    this.InputSave.Checked = true;
 	    this.InputSave.CheckState = System.Windows.Forms.CheckState.Checked;
-	    this.InputTable.SetColumnSpan(this.InputSave, 2);
-	    this.InputSave.Dock = System.Windows.Forms.DockStyle.Fill;
-	    this.InputSave.Location = new System.Drawing.Point(296, 411);
+	    this.InputTable.SetColumnSpan(this.InputSave, 3);
+	    this.InputSave.Dock = System.Windows.Forms.DockStyle.Left;
+	    this.InputSave.Enabled = false;
+	    this.InputSave.Location = new System.Drawing.Point(296, 400);
 	    this.InputSave.Name = "InputSave";
-	    this.InputSave.Size = new System.Drawing.Size(204, 25);
-	    this.InputSave.TabIndex = 21;
+	    this.InputSave.Size = new System.Drawing.Size(174, 25);
+	    this.InputSave.TabIndex = 19;
 	    this.InputSave.Text = "Save upgrade stations to file";
 	    this.InputSave.UseVisualStyleBackColor = true;
 	    // 
 	    // InputMirror
 	    // 
 	    this.InputMirror.AutoSize = true;
-	    this.InputTable.SetColumnSpan(this.InputMirror, 3);
-	    this.InputMirror.Dock = System.Windows.Forms.DockStyle.Fill;
-	    this.InputMirror.Location = new System.Drawing.Point(3, 411);
+	    this.InputTable.SetColumnSpan(this.InputMirror, 4);
+	    this.InputMirror.Dock = System.Windows.Forms.DockStyle.Left;
+	    this.InputMirror.Enabled = false;
+	    this.InputMirror.Location = new System.Drawing.Point(3, 400);
 	    this.InputMirror.Name = "InputMirror";
-	    this.InputMirror.Size = new System.Drawing.Size(287, 25);
-	    this.InputMirror.TabIndex = 16;
+	    this.InputMirror.Size = new System.Drawing.Size(218, 25);
+	    this.InputMirror.TabIndex = 18;
 	    this.InputMirror.Text = "Mirror all upgrade stations and signs";
 	    this.InputMirror.UseVisualStyleBackColor = true;
 	    // 
 	    // BtnRemoveStation
 	    // 
 	    this.BtnRemoveStation.Dock = System.Windows.Forms.DockStyle.Fill;
-	    this.BtnRemoveStation.Location = new System.Drawing.Point(211, 380);
+	    this.BtnRemoveStation.Enabled = false;
+	    this.BtnRemoveStation.Location = new System.Drawing.Point(211, 369);
 	    this.BtnRemoveStation.Name = "BtnRemoveStation";
 	    this.BtnRemoveStation.Size = new System.Drawing.Size(79, 25);
-	    this.BtnRemoveStation.TabIndex = 13;
+	    this.BtnRemoveStation.TabIndex = 14;
 	    this.BtnRemoveStation.Text = "Remove";
 	    this.BtnRemoveStation.UseVisualStyleBackColor = true;
 	    this.BtnRemoveStation.Click += new System.EventHandler(this.BtnRemoveStation_Click);
@@ -199,42 +247,45 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // BtnRemoveSign
 	    // 
 	    this.BtnRemoveSign.Dock = System.Windows.Forms.DockStyle.Fill;
-	    this.BtnRemoveSign.Location = new System.Drawing.Point(506, 380);
+	    this.BtnRemoveSign.Enabled = false;
+	    this.BtnRemoveSign.Location = new System.Drawing.Point(506, 369);
 	    this.BtnRemoveSign.Name = "BtnRemoveSign";
 	    this.BtnRemoveSign.Size = new System.Drawing.Size(79, 25);
-	    this.BtnRemoveSign.TabIndex = 15;
+	    this.BtnRemoveSign.TabIndex = 17;
 	    this.BtnRemoveSign.Text = "Remove";
 	    this.BtnRemoveSign.UseVisualStyleBackColor = true;
 	    this.BtnRemoveSign.Click += new System.EventHandler(this.BtnRemoveSign_Click);
 	    // 
 	    // ListSigns
 	    // 
-	    this.InputTable.SetColumnSpan(this.ListSigns, 3);
+	    this.InputTable.SetColumnSpan(this.ListSigns, 4);
 	    this.ListSigns.Dock = System.Windows.Forms.DockStyle.Fill;
 	    this.ListSigns.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.ListSigns.FormattingEnabled = true;
 	    this.ListSigns.ItemHeight = 15;
 	    this.ListSigns.Location = new System.Drawing.Point(296, 251);
 	    this.ListSigns.Name = "ListSigns";
-	    this.ListSigns.Size = new System.Drawing.Size(289, 123);
+	    this.ListSigns.Size = new System.Drawing.Size(289, 112);
 	    this.ListSigns.TabIndex = 0;
-	    this.ListSigns.TabStop = false;
 	    // 
 	    // BtnAddSign
 	    // 
 	    this.BtnAddSign.Dock = System.Windows.Forms.DockStyle.Fill;
-	    this.BtnAddSign.Location = new System.Drawing.Point(421, 380);
+	    this.BtnAddSign.Enabled = false;
+	    this.BtnAddSign.Location = new System.Drawing.Point(336, 369);
 	    this.BtnAddSign.Name = "BtnAddSign";
 	    this.BtnAddSign.Size = new System.Drawing.Size(79, 25);
-	    this.BtnAddSign.TabIndex = 14;
+	    this.BtnAddSign.TabIndex = 15;
 	    this.BtnAddSign.Text = "Add";
 	    this.BtnAddSign.UseVisualStyleBackColor = true;
 	    this.BtnAddSign.Click += new System.EventHandler(this.BtnAddSign_Click);
 	    // 
 	    // BtnAddStation
 	    // 
+	    this.InputTable.SetColumnSpan(this.BtnAddStation, 2);
 	    this.BtnAddStation.Dock = System.Windows.Forms.DockStyle.Right;
-	    this.BtnAddStation.Location = new System.Drawing.Point(128, 380);
+	    this.BtnAddStation.Enabled = false;
+	    this.BtnAddStation.Location = new System.Drawing.Point(43, 369);
 	    this.BtnAddStation.Name = "BtnAddStation";
 	    this.BtnAddStation.Size = new System.Drawing.Size(77, 25);
 	    this.BtnAddStation.TabIndex = 12;
@@ -245,7 +296,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // LabelSign
 	    // 
 	    this.LabelSign.AutoSize = true;
-	    this.InputTable.SetColumnSpan(this.LabelSign, 3);
+	    this.InputTable.SetColumnSpan(this.LabelSign, 4);
 	    this.LabelSign.Dock = System.Windows.Forms.DockStyle.Fill;
 	    this.LabelSign.Location = new System.Drawing.Point(296, 217);
 	    this.LabelSign.Name = "LabelSign";
@@ -257,7 +308,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // LabelStation
 	    // 
 	    this.LabelStation.AutoSize = true;
-	    this.InputTable.SetColumnSpan(this.LabelStation, 3);
+	    this.InputTable.SetColumnSpan(this.LabelStation, 4);
 	    this.LabelStation.Dock = System.Windows.Forms.DockStyle.Fill;
 	    this.LabelStation.Location = new System.Drawing.Point(3, 217);
 	    this.LabelStation.Name = "LabelStation";
@@ -290,7 +341,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // 
 	    // InputUpgradesPath
 	    // 
-	    this.InputTable.SetColumnSpan(this.InputUpgradesPath, 4);
+	    this.InputTable.SetColumnSpan(this.InputUpgradesPath, 6);
 	    this.InputUpgradesPath.Dock = System.Windows.Forms.DockStyle.Bottom;
 	    this.InputUpgradesPath.Location = new System.Drawing.Point(86, 191);
 	    this.InputUpgradesPath.Name = "InputUpgradesPath";
@@ -301,7 +352,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // 
 	    // InputVscriptPath
 	    // 
-	    this.InputTable.SetColumnSpan(this.InputVscriptPath, 4);
+	    this.InputTable.SetColumnSpan(this.InputVscriptPath, 6);
 	    this.InputVscriptPath.Dock = System.Windows.Forms.DockStyle.Bottom;
 	    this.InputVscriptPath.Location = new System.Drawing.Point(86, 129);
 	    this.InputVscriptPath.Name = "InputVscriptPath";
@@ -337,11 +388,11 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.InputUpgradesPull.AutoSize = true;
 	    this.InputUpgradesPull.Checked = true;
 	    this.InputUpgradesPull.CheckState = System.Windows.Forms.CheckState.Checked;
-	    this.InputTable.SetColumnSpan(this.InputUpgradesPull, 4);
-	    this.InputUpgradesPull.Dock = System.Windows.Forms.DockStyle.Fill;
+	    this.InputTable.SetColumnSpan(this.InputUpgradesPull, 3);
+	    this.InputUpgradesPull.Dock = System.Windows.Forms.DockStyle.Left;
 	    this.InputUpgradesPull.Location = new System.Drawing.Point(86, 158);
 	    this.InputUpgradesPull.Name = "InputUpgradesPull";
-	    this.InputUpgradesPull.Size = new System.Drawing.Size(414, 25);
+	    this.InputUpgradesPull.Size = new System.Drawing.Size(168, 25);
 	    this.InputUpgradesPull.TabIndex = 10;
 	    this.InputUpgradesPull.Text = "Pull upgrades from GitHub";
 	    this.InputUpgradesPull.UseVisualStyleBackColor = true;
@@ -370,7 +421,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // 
 	    // InputMap
 	    // 
-	    this.InputTable.SetColumnSpan(this.InputMap, 4);
+	    this.InputTable.SetColumnSpan(this.InputMap, 6);
 	    this.InputMap.Dock = System.Windows.Forms.DockStyle.Bottom;
 	    this.InputMap.Location = new System.Drawing.Point(86, 36);
 	    this.InputMap.Name = "InputMap";
@@ -381,7 +432,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // 
 	    // InputGame
 	    // 
-	    this.InputTable.SetColumnSpan(this.InputGame, 4);
+	    this.InputTable.SetColumnSpan(this.InputGame, 6);
 	    this.InputGame.Dock = System.Windows.Forms.DockStyle.Bottom;
 	    this.InputGame.Location = new System.Drawing.Point(86, 5);
 	    this.InputGame.Name = "InputGame";
@@ -404,10 +455,10 @@ namespace MvM_Upgrade_Vscript_Converter
 	    // BtnConvert
 	    // 
 	    this.BtnConvert.Dock = System.Windows.Forms.DockStyle.Fill;
-	    this.BtnConvert.Location = new System.Drawing.Point(506, 411);
+	    this.BtnConvert.Location = new System.Drawing.Point(506, 431);
 	    this.BtnConvert.Name = "BtnConvert";
 	    this.BtnConvert.Size = new System.Drawing.Size(79, 25);
-	    this.BtnConvert.TabIndex = 20;
+	    this.BtnConvert.TabIndex = 22;
 	    this.BtnConvert.Text = "Convert";
 	    this.BtnConvert.UseVisualStyleBackColor = true;
 	    this.BtnConvert.Click += new System.EventHandler(this.BtnConvert_Click);
@@ -431,12 +482,12 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.BtnMap.Size = new System.Drawing.Size(79, 25);
 	    this.BtnMap.TabIndex = 2;
 	    this.BtnMap.Text = "Browse...";
-	    this.BtnMap.UseVisualStyleBackColor = true;
+	    this.BtnMap.UseVisualStyleBackColor = false;
 	    this.BtnMap.Click += new System.EventHandler(this.BtnMap_Click);
 	    // 
 	    // InputSuffix
 	    // 
-	    this.InputTable.SetColumnSpan(this.InputSuffix, 4);
+	    this.InputTable.SetColumnSpan(this.InputSuffix, 6);
 	    this.InputSuffix.Dock = System.Windows.Forms.DockStyle.Bottom;
 	    this.InputSuffix.Location = new System.Drawing.Point(86, 67);
 	    this.InputSuffix.Name = "InputSuffix";
@@ -449,25 +500,25 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.InputVscriptPull.AutoSize = true;
 	    this.InputVscriptPull.Checked = true;
 	    this.InputVscriptPull.CheckState = System.Windows.Forms.CheckState.Checked;
-	    this.InputTable.SetColumnSpan(this.InputVscriptPull, 4);
-	    this.InputVscriptPull.Dock = System.Windows.Forms.DockStyle.Fill;
+	    this.InputTable.SetColumnSpan(this.InputVscriptPull, 3);
+	    this.InputVscriptPull.Dock = System.Windows.Forms.DockStyle.Left;
 	    this.InputVscriptPull.Location = new System.Drawing.Point(86, 96);
 	    this.InputVscriptPull.Name = "InputVscriptPull";
-	    this.InputVscriptPull.Size = new System.Drawing.Size(414, 25);
+	    this.InputVscriptPull.Size = new System.Drawing.Size(155, 25);
 	    this.InputVscriptPull.TabIndex = 8;
 	    this.InputVscriptPull.Text = "Pull Vscript from GitHub";
 	    this.InputVscriptPull.UseVisualStyleBackColor = true;
 	    // 
 	    // ListStations
 	    // 
-	    this.InputTable.SetColumnSpan(this.ListStations, 3);
+	    this.InputTable.SetColumnSpan(this.ListStations, 4);
 	    this.ListStations.Dock = System.Windows.Forms.DockStyle.Fill;
 	    this.ListStations.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 	    this.ListStations.FormattingEnabled = true;
 	    this.ListStations.ItemHeight = 15;
 	    this.ListStations.Location = new System.Drawing.Point(3, 251);
 	    this.ListStations.Name = "ListStations";
-	    this.ListStations.Size = new System.Drawing.Size(287, 123);
+	    this.ListStations.Size = new System.Drawing.Size(287, 112);
 	    this.ListStations.TabIndex = 0;
 	    this.ListStations.TabStop = false;
 	    // 
@@ -517,7 +568,7 @@ namespace MvM_Upgrade_Vscript_Converter
 	    this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 	    this.Name = "Main";
 	    this.Text = "MvM Upgrades Vscript Converter";
-	    this.Load += new System.EventHandler(this.Form1_Load);
+	    this.Load += new System.EventHandler(this.Main_Load);
 	    this.MainTable.ResumeLayout(false);
 	    this.GroupSettings.ResumeLayout(false);
 	    this.InputTable.ResumeLayout(false);
@@ -566,6 +617,9 @@ namespace MvM_Upgrade_Vscript_Converter
 	private System.Windows.Forms.CheckBox InputMirror;
 	private System.Windows.Forms.CheckBox InputSave;
 	private System.Windows.Forms.FolderBrowserDialog FolderDialogGame;
+	private System.Windows.Forms.Button BtnEditStation;
+	private System.Windows.Forms.Button BtnEditSign;
+	private System.Windows.Forms.CheckBox InputCompress;
     }
 }
 
