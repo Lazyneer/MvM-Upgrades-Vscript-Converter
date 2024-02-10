@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>MvM_Upgrade_Vscript_Converter</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>lazyneer.ico</ApplicationIcon>
     <Authors>Lazyneer</Authors>
     <PackageIcon>Lazyneer.jpg</PackageIcon>
     <PackageIconUrl />
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
